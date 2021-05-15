@@ -4,7 +4,7 @@ This repository contains implementation of data structures in C language
 Contents
 
 1. Linkedlist Implementation
-2. Sorting - Bubble Sort
+2. Sorting - Bubble Sort, Insertion Sort, Selection Sort
 
 
 Compilation:
