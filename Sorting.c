@@ -7,7 +7,7 @@
 int data_arr[NO_OF_DATA_ITEMS] = { 47, 75, 86, 100, 100, 1, 69, 67, 87, 47 };		//Unsorted array
 //int data_arr[NO_OF_DATA_ITEMS] = { 10, 20, 30, 40, 50, 60, 70, 80, 90, 100 };		//Already sorted elements
 
-void swap(int* num1, int* num2)
+void swap(int * num1, int * num2)
 {
 	int tmp = 0;
 	tmp = *num1;
@@ -43,7 +43,7 @@ void bubble_sort(int data_arr[NO_OF_DATA_ITEMS])
 	bool swap_done = false;
 
 	int i = 0;
-	for (pass = 0; pass < NO_OF_DATA_ITEMS - 1; pass++)	//Loop for no of passes - (n-1) pass required
+	for (pass = 0; pass < NO_OF_DATA_ITEMS-1; pass++)	//Loop for no of passes - (n-1) pass required
 	{
 		swap_done = false;
 		for (i = 0; i < NO_OF_DATA_ITEMS - 1 - pass; i++)
@@ -100,12 +100,46 @@ void insertion_sort(int data_arr[NO_OF_DATA_ITEMS])
 				break;
 			}
 		}
-		data_arr[j + 1] = num;
+		data_arr[j +1] = num;
 	}
 
 	/* Print the array*/
 	printf("Elements in array after insertion sort : \r\n");
 	print_elements(data_arr);
+}
+
+void selection_sort(int data_arr[NO_OF_DATA_ITEMS])
+{
+	/*
+	* Complexity of Selection Sort - Best Time (when list is already sorted) - O(n), Worst time - O(n^2)
+	* Insertion sort implementation will not be adaptive and stable (order will not be maintained for duplicates)
+	* Insertion sort intermediate values sort the kth smallest element.
+	*/
+
+	/* Print the array*/
+	printf("Elements in array before selection sort : \r\n");
+	print_elements(data_arr);
+
+	int pass = 0;
+
+	for (pass = 0; pass < NO_OF_DATA_ITEMS; pass++)
+	{
+		int j = pass, k = pass;
+
+		for (j = pass; j < NO_OF_DATA_ITEMS; j++)
+		{
+			if (data_arr[j] < data_arr[k])
+			{
+				k = j;
+			}
+		}
+		swap(&data_arr[pass], &data_arr[k]);
+	}
+
+	/* Print the array*/
+	printf("Elements in array after selection sort : \r\n");
+	print_elements(data_arr);
+
 }
 
 int main(void)
@@ -114,21 +148,26 @@ int main(void)
 
 	printf("Enter the sorting algorithm\r\n"
 		"1. Bubble Sort\r\n"
-		"2. Insertion Sort\r\n");
+		"2. Insertion Sort\r\n"
+		"3. Selection Sort\r\n");
 	scanf_s("%d", &input);
 
 	switch (input)
 	{
-	case 1:
-		bubble_sort(data_arr);
-		break;
+		case 1:
+			bubble_sort(data_arr);
+			break;
 
-	case 2:
-		insertion_sort(data_arr);
-		break;
+		case 2:
+			insertion_sort(data_arr);
+			break;
 
-	default:
-		break;
+		case 3:
+			selection_sort(data_arr);
+			break;
+
+		default:
+			break;
 	}
 
 
