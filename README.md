@@ -5,6 +5,7 @@ Contents
 
 1. Linkedlist Implementation
 2. Sorting - Bubble Sort, Insertion Sort, Selection Sort
+3. Hashing - Open Hashing - Separate Chaining
 
 
 Compilation:
