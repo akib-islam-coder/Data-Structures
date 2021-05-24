@@ -6,7 +6,7 @@ Contents
 1. Linkedlist Implementation
 2. Sorting - Bubble Sort, Insertion Sort, Selection Sort
 3. Hashing - Open Hashing - Separate Chaining
-4. Binary Tree - Creating Binary Tree, Preorder Inorder and Post Order Traversing
+4. Binary Tree - Creating Binary Tree, Preorder Inorder, Inorder and Post Order Traversing - Recursively and Iteratively, Number of nodes and height of binary tree
 
 
 Compilation:
